@@ -2,13 +2,14 @@ import GridSquare from "./gridSquare"
 
 interface gridProps {
     size: number,
+    rowNum: number,
 }
 
-function GridRow({ size }: gridProps) {
+function GridRow({ size, rowNum }: gridProps) {
     return (<div className="gridRow">
         {
             Array.from({ length: size }).map(function (e, i) {
-                return <GridSquare />
+                return <GridSquare x={i} y={rowNum} key={i} />
             })
         }
     </div>

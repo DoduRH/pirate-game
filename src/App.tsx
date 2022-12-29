@@ -33,7 +33,7 @@ function App() {
         <History />
       </div>
       <div className='gridArea'>
-        <Grid size={5} />
+        <Grid />
       </div>
     </div>
   );

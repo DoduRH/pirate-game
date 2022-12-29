@@ -2,9 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import pirateReducer from '../features/pirateSlice';
 
 export const store = configureStore({
-  reducer: {
-    counter: pirateReducer,
-  },
+  reducer: pirateReducer,
 });
 
 export type AppDispatch = typeof store.dispatch;

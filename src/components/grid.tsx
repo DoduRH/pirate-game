@@ -1,14 +1,14 @@
+import { useSelector } from "react-redux";
+import { PirateState } from "../features/pirateSlice";
 import GridRow from "./gridRow"
 
-interface gridProps {
-    size: number,
-}
+function Grid() {
+    const size = useSelector((state: PirateState) => state.gridSize);
 
-function Grid({ size }: gridProps) {
     return (<>
         {
             Array.from({ length: size }).map(function (e, i) {
-                return <GridRow size={size} />
+                return <GridRow size={size} rowNum={i} key={i} />
             })
         }
     </>

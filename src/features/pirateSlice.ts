@@ -1,11 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import SquareState from '../interfaces/squareState';
 
 export interface PirateState {
-  gridSize: number
+  grid: SquareState[][];
+  gridSize: number;
 }
 
+const iGridSize = 5;
+
 const initialState: PirateState = {
-  gridSize: -1
+  grid: new Array(iGridSize).fill(
+    new Array(iGridSize).fill(SquareState.Empty)
+  ),
+  gridSize: iGridSize,
 };
 
 export const pirateSlice = createSlice({
@@ -15,7 +22,10 @@ export const pirateSlice = createSlice({
   reducers: {
     setGridSize: (state, action: PayloadAction<number>) => {
       state.gridSize = action.payload;
-    }
+      state.grid = new Array(state.gridSize).fill(
+        new Array(state.gridSize).fill(SquareState.Empty)
+      );
+    },
   },
 });
 
