@@ -1,0 +1,15 @@
+body {
+  background-color: whitesmoke;
+}
+
+.gridRow {
+  display: flex;
+  background-color: white;
+  width: min(50vw, 90vh);
+}
+
+.gridSquare {
+  flex: 1;
+  height: min(10vw, 18vh);
+  border: 2px solid black;
+}

@@ -1,10 +1,11 @@
 import { setGridSize } from './features/pirateSlice';
 import './App.css';
+import Grid from './components/grid';
 
 function App() {
   return (
     <div className="App">
-      Test
+      <Grid size={5}/>
     </div>
   );
 }
