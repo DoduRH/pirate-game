@@ -1,15 +1,46 @@
 body {
   background-color: whitesmoke;
+  height: 100vh;
+}
+
+.gridArea {
+  flex: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
 }
 
 .gridRow {
   display: flex;
   background-color: white;
-  width: min(50vw, 90vh);
+  width: min(45vw, 90vh);
 }
 
 .gridSquare {
   flex: 1;
-  height: min(10vw, 18vh);
+  height: min(9vw, 18vh);
   border: 2px solid black;
+}
+
+.root {
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.infoCol {
+  flex: 1;
+}
+
+.cords {
+  font-size: 15em;
+  font-weight: bold;
+}
+
+.history {
+  font-size: 5em;
+  font-weight: bold;
 }
