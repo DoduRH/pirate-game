@@ -19,7 +19,7 @@ body {
 .gridSquare {
   flex: 1;
   height: min(9vw, 18vh);
-  border: 2px solid black;
+  border: 0.2vw solid black;
 }
 
 .root {
