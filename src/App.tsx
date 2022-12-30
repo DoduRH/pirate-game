@@ -3,8 +3,7 @@ import './App.css';
 import Grid from './components/grid';
 import History from './components/history';
 import CordDisplay from './components/cords';
-import Button from './components/button';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SquareState from './interfaces/squareState';
 
@@ -50,7 +49,6 @@ function App() {
   return (
     <div className="App">
       <div className='infoCol'>
-        <Button onClick={nextSquare} text="Next" />
         <CordDisplay />
         <History />
       </div>
