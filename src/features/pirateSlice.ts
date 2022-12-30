@@ -15,7 +15,7 @@ export interface PirateState {
 
 interface SetSquareInterface extends xyPos { }
 
-const iGridSize = 5;
+const iGridSize = -1;
 
 const initialState: PirateState = {
   grid: Array.from({ length: iGridSize },
