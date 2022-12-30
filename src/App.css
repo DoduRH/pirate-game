@@ -1,6 +1,7 @@
 body {
   background-color: whitesmoke;
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .gridArea {

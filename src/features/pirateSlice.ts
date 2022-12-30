@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { act } from '@testing-library/react';
 import SquareState from '../interfaces/squareState';
 
 export interface xyPos {
@@ -12,12 +13,12 @@ export interface PirateState {
   history: xyPos[];
 }
 
-interface SetSquareInterface extends xyPos{}
+interface SetSquareInterface extends xyPos { }
 
 const iGridSize = 5;
 
 const initialState: PirateState = {
-  grid: Array.from({length:iGridSize}, 
+  grid: Array.from({ length: iGridSize },
     (_, i) => new Array(iGridSize).fill(SquareState.Empty)
   ),
   gridSize: iGridSize,
@@ -36,11 +37,11 @@ export const pirateSlice = createSlice({
       );
     },
     setRecentSquare: (state, action: PayloadAction<SetSquareInterface>) => {
+      state.history = [action.payload, ...state.history];
       for (let x = 0; x < state.grid.length; x++) {
         for (let y = 0; y < state.grid[x].length; y++) {
           if (state.grid[x][y] == SquareState.Recent) {
             state.grid[x][y] = SquareState.Used;
-            state.history = [{x, y}, ...state.history];
           }
         }
       }
