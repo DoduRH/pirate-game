@@ -1,6 +1,6 @@
 enum SquareState {
     Empty = 'white',
-    Recent = 'purple',
+    Recent = 'red',
     Used = 'blue',
 }
 

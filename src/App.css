@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: #223f79;
   height: 100vh;
   overflow-y: hidden;
 }
@@ -13,7 +13,7 @@ body {
 
 .gridRow {
   display: flex;
-  background-color: white;
+  background-color: rgb(218, 218, 218);
   width: min(45vw, 90vh);
 }
 
@@ -39,11 +39,13 @@ body {
 .cords {
   font-size: 15em;
   font-weight: bold;
+  color: white;
 }
 
 .history {
   font-size: 5em;
   font-weight: bold;
+  color: white;
 }
 
 .button {
