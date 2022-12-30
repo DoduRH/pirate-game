@@ -14,13 +14,11 @@ body {
 .gridRow {
   display: flex;
   background-color: rgb(218, 218, 218);
-  width: min(45vw, 90vh);
 }
 
 .gridSquare {
   flex: 1;
-  height: min(9vw, 18vh);
-  border: 0.2vw solid black;
+  border: 0.15vw solid black;
 }
 
 .root {

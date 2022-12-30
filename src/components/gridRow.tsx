@@ -9,7 +9,7 @@ function GridRow({ size, rowNum }: gridProps) {
     return (<div className="gridRow">
         {
             Array.from({ length: size }).map(function (e, i) {
-                return <GridSquare x={i} y={rowNum} key={i} />
+                return <GridSquare x={i} y={rowNum} gridSize={size} key={i} />
             })
         }
     </div>
