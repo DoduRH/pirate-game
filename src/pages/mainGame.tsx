@@ -15,13 +15,32 @@ function MainGame() {
   function nextSquare() {
     let x: number, y: number;
 
-    do {
-      x = Math.floor(Math.random() * gridSize);
-      y = Math.floor(Math.random() * gridSize);
-    } while (grid[x][y] != SquareState.Empty);
+    const flattened = grid.flat();
 
-    dispatch(setRecentSquare({ x: x, y: y }));
+    const emptyCount = flattened.map(
+      e => e == SquareState.Empty ? 1 : 0
+    ).reduce((a: number, b: number) => a + b, 0);
 
+    if (emptyCount === 0) {
+      return;
+    }
+
+    const idx = Math.floor(Math.random() * emptyCount);
+    let passed = 0;
+
+    for (x = 0; x < grid.length; x++) {
+      for (y = 0; y < grid[x].length; y++) {
+        if (grid[x][y] == SquareState.Empty) {
+          if (passed === idx) {
+            dispatch(setRecentSquare({ x: x, y: y }));
+            return;
+          }
+          passed++;
+        }
+      }
+    }
+
+    console.error("UNREACHABLE");
   }
 
   useEffect(() => {
