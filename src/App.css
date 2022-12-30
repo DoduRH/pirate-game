@@ -14,6 +14,7 @@ body {
 .gridRow {
   display: flex;
   background-color: rgb(218, 218, 218);
+  width: min(45vw, 90vh);
 }
 
 .gridSquare {
@@ -76,4 +77,3 @@ svg.labelSvg {
   width: 100%;
   height: 100%;
 }
-
