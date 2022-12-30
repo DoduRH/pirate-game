@@ -13,8 +13,8 @@ function GridSquare({ x, y, gridSize }: GridSquareProps) {
 
     const style = {
         backgroundColor: colour,
-        height: `min(calc(${45 / gridSize}vw - 4px), calc(${90 / gridSize}vh) - 4px)`,
-        width: `min(calc(${45 / gridSize}vw - 4px), calc(${90 / gridSize}vh) - 4px)`,
+        height: `min(calc(${45 / (gridSize+1)}vw - 4px), calc(${90 / (gridSize+1)}vh) - 4px)`,
+        width: `min(calc(${45 / (gridSize+1)}vw - 4px), calc(${90 / (gridSize+1)}vh) - 4px)`,
     };
 
     return (
