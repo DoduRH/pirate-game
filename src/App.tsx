@@ -35,6 +35,8 @@ function App() {
         } else {
           nextSquare();
         }
+      } else if (e.key == 'r') {
+        dispatch(setGridSize(gridSize));
       }
     }
 

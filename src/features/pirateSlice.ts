@@ -35,6 +35,7 @@ export const pirateSlice = createSlice({
       state.grid = new Array(state.gridSize).fill(
         new Array(state.gridSize).fill(SquareState.Empty)
       );
+      state.history = [];
     },
     setRecentSquare: (state, action: PayloadAction<SetSquareInterface>) => {
       state.history = [action.payload, ...state.history];
