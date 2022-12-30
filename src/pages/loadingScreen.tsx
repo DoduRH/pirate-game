@@ -8,7 +8,7 @@ function LoadingScreen() {
   const [newGridSize, setNewGridSize] = useState<number>(0);
 
   function changeGridSize() {
-    if (newGridSize != undefined && newGridSize > 0) {
+    if (newGridSize !== undefined && newGridSize > 0) {
       dispatch(setGridSize(newGridSize))
     } else {
       alert(`Please enter a positive integer for the grid size`);

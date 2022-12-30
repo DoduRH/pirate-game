@@ -1,4 +1,3 @@
-import GridSquare from "./gridSquare"
 import LabelSquare from "./labelSquare"
 
 interface labelRowProps {

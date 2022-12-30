@@ -9,52 +9,50 @@ import HelpHover from '../components/helpHover';
 
 function MainGame() {
   const dispatch = useDispatch();
-  const gridSize = useSelector((state: PirateState) => state.gridSize);
   const grid = useSelector((state: PirateState) => state.grid);
 
-
-  function nextSquare() {
-    let x: number, y: number;
-
-    const flattened = grid.flat();
-
-    const emptyCount = flattened.map(
-      e => e == SquareState.Empty ? 1 : 0
-    ).reduce((a: number, b: number) => a + b, 0);
-
-    if (emptyCount === 0) {
-      return;
-    }
-
-    const idx = Math.floor(Math.random() * emptyCount);
-    let passed = 0;
-
-    for (x = 0; x < grid.length; x++) {
-      for (y = 0; y < grid[x].length; y++) {
-        if (grid[x][y] == SquareState.Empty) {
-          if (passed === idx) {
-            dispatch(setRecentSquare({ x: x, y: y }));
-            return;
+  useEffect(() => {
+    function nextSquare() {
+      let x: number, y: number;
+  
+      const flattened = grid.flat();
+  
+      const emptyCount = flattened.map(
+        e => e === SquareState.Empty ? 1 : 0
+      ).reduce((a: number, b: number) => a + b, 0);
+  
+      if (emptyCount === 0) {
+        return;
+      }
+  
+      const idx = Math.floor(Math.random() * emptyCount);
+      let passed = 0;
+  
+      for (x = 0; x < grid.length; x++) {
+        for (y = 0; y < grid[x].length; y++) {
+          if (grid[x][y] === SquareState.Empty) {
+            if (passed === idx) {
+              dispatch(setRecentSquare({ x: x, y: y }));
+              return;
+            }
+            passed++;
           }
-          passed++;
         }
       }
+  
+      console.error("UNREACHABLE");
     }
 
-    console.error("UNREACHABLE");
-  }
-
-  useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Enter') {
         if (e.target instanceof Element) {
-          if (e.target.tagName != 'BUTTON') {
+          if (e.target.tagName !== 'BUTTON') {
             nextSquare();
           }
         } else {
           nextSquare();
         }
-      } else if (e.key == 'r') {
+      } else if (e.key === 'r') {
         dispatch(setGridSize(-1));
       }
     }
@@ -64,7 +62,7 @@ function MainGame() {
     return function cleanup() {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [grid]);
+  }, [dispatch, grid]);
 
   return (
     <div className="Game">

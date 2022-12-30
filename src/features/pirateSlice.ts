@@ -29,7 +29,7 @@ function setRecent(state: WritableDraft<PirateState>, pos: xyPos) {
   state.history = [pos, ...state.history];
   for (let x = 0; x < state.grid.length; x++) {
     for (let y = 0; y < state.grid[x].length; y++) {
-      if (state.grid[x][y] == SquareState.Recent) {
+      if (state.grid[x][y] === SquareState.Recent) {
         state.grid[x][y] = SquareState.Used;
       }
     }
