@@ -77,3 +77,16 @@ svg.labelSvg {
   width: 100%;
   height: 100%;
 }
+
+.helper {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+}
+
+.helper p {
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+  cursor: context-menu;
+}

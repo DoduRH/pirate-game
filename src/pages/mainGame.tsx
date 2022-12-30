@@ -5,6 +5,7 @@ import CordDisplay from '../components/cords';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SquareState from '../interfaces/squareState';
+import HelpHover from '../components/helpHover';
 
 function MainGame() {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ function MainGame() {
   return (
     <div className="Game">
       <div className='infoCol'>
+        <HelpHover />
         <CordDisplay />
         <History />
       </div>
