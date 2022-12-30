@@ -28,7 +28,13 @@ function App() {
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Enter') {
-        nextSquare();
+        if (e.target instanceof Element) {
+          if (e.target.tagName != 'BUTTON') {
+            nextSquare();
+          }
+        } else {
+          nextSquare();
+        }
       }
     }
 
