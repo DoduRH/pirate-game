@@ -2,15 +2,15 @@ import GridSquare from "./gridSquare"
 import LabelSquare from "./labelSquare"
 
 interface labelRowProps {
-    size: number,
+    gridSize: number,
 }
 
-function LabelRow({ size }: labelRowProps) {
+function LabelRow({ gridSize }: labelRowProps) {
     return (<div className="gridRow">
-        <LabelSquare text='' gridSize={size} key={-1} />
+        <LabelSquare text='' gridSize={gridSize} key={-1} />
         {
-            Array.from({ length: size }).map(function (e, i) {
-                return <LabelSquare text={i.toString()} gridSize={size} key={i} />
+            Array.from({ length: gridSize }).map(function (e, i) {
+                return <LabelSquare text={i.toString()} gridSize={gridSize} key={i} />
             })
         }
     </div>

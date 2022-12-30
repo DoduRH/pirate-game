@@ -4,13 +4,13 @@ import GridRow from "./gridRow"
 import LabelRow from "./labelRow";
 
 function Grid() {
-    const size = useSelector((state: PirateState) => state.gridSize);
+    const gridSize = useSelector((state: PirateState) => state.gridSize);
 
     return (<>
-        <LabelRow size={size} />
+        <LabelRow gridSize={gridSize} />
         {
-            Array.from({ length: size }).map(function (e, i) {
-                return <GridRow size={size} rowNum={i} key={i} />
+            Array.from({ length: gridSize }).map(function (e, i) {
+                return <GridRow gridSize={gridSize} rowNum={i} key={i} />
             })
         }
     </>
