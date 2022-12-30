@@ -55,4 +55,13 @@ body {
 
 .button {
   font-size: 2em;
+  margin-top: 2vh;
+}
+
+input {
+  font-size: large;
+}
+
+h1 {
+  color: white;
 }

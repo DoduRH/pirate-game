@@ -3,14 +3,17 @@ import './App.css';
 import Grid from './components/grid';
 import History from './components/history';
 import CordDisplay from './components/cords';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SquareState from './interfaces/squareState';
+import Button from './components/button';
 
 function App() {
   const dispatch = useDispatch();
   const gridSize = useSelector((state: PirateState) => state.gridSize);
   const grid = useSelector((state: PirateState) => state.grid);
+
+  const [newGridSize, setNewGridSize] = useState<number>(NaN);
 
   function nextSquare() {
     let x: number, y: number;
@@ -35,7 +38,7 @@ function App() {
           nextSquare();
         }
       } else if (e.key == 'r') {
-        dispatch(setGridSize(gridSize));
+        dispatch(setGridSize(-1));
       }
     }
 
@@ -46,16 +49,35 @@ function App() {
     };
   }, [grid]);
 
-  return (
-    <div className="App">
-      <div className='infoCol'>
-        <CordDisplay />
-        <History />
-      </div>
-      <div className='gridArea'>
-        <Grid />
-      </div>
-    </div>
+  function changeGridSize() {
+    if (newGridSize != undefined && newGridSize > 0) {
+      dispatch(setGridSize(newGridSize))
+    } else {
+      alert(`Please enter a positive integer for the grid size`);
+    }
+  }
+
+  return (<>
+    {
+      gridSize === -1 ?
+        <>
+          <h1>Enter the grid size</h1>
+          <input type='number' placeholder='Gridsize' onChange={(e) => setNewGridSize(e.target.valueAsNumber)} value={newGridSize} />
+          <br />
+          <Button onClick={changeGridSize} text='Submit' />
+        </>
+        :
+        <div className="App">
+          <div className='infoCol'>
+            <CordDisplay />
+            <History />
+          </div>
+          <div className='gridArea'>
+            <Grid />
+          </div>
+        </div>
+    }
+  </>
   );
 }
 

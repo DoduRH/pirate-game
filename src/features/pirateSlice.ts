@@ -15,7 +15,7 @@ export interface PirateState {
 
 interface SetSquareInterface extends xyPos { }
 
-const iGridSize = 5;
+const iGridSize = -1;
 
 const initialState: PirateState = {
   grid: Array.from({ length: iGridSize },
@@ -37,17 +37,26 @@ function setRecent(state: WritableDraft<PirateState>, pos: xyPos) {
   state.grid[pos.x][pos.y] = SquareState.Recent;
 }
 
+function resetGrid(state: WritableDraft<PirateState>) {
+  state.grid = new Array(state.gridSize).fill(
+    new Array(state.gridSize).fill(SquareState.Empty)
+  );
+  state.history = [];
+}
+
 export const pirateSlice = createSlice({
   name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
+    resetGrid: (state) => {
+      resetGrid(state);
+    },
     setGridSize: (state, action: PayloadAction<number>) => {
       state.gridSize = action.payload;
-      state.grid = new Array(state.gridSize).fill(
-        new Array(state.gridSize).fill(SquareState.Empty)
-      );
-      state.history = [];
+      if (state.gridSize > 0) {
+        resetGrid(state);
+      }
     },
     setRecentSquare: (state, action: PayloadAction<SetSquareInterface>) => {
       setRecent(state, action.payload);
