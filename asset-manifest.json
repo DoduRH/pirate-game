@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-pirate-game/static/css/main.00c96fcf.css",
-    "main.js": "/react-pirate-game/static/js/main.d5251475.js",
-    "index.html": "/react-pirate-game/index.html",
-    "main.00c96fcf.css.map": "/react-pirate-game/static/css/main.00c96fcf.css.map",
-    "main.d5251475.js.map": "/react-pirate-game/static/js/main.d5251475.js.map"
+    "main.css": "/pirate-game/static/css/main.00c96fcf.css",
+    "main.js": "/pirate-game/static/js/main.d5251475.js",
+    "index.html": "/pirate-game/index.html",
+    "main.00c96fcf.css.map": "/pirate-game/static/css/main.00c96fcf.css.map",
+    "main.d5251475.js.map": "/pirate-game/static/js/main.d5251475.js.map"
   },
   "entrypoints": [
     "static/css/main.00c96fcf.css",
