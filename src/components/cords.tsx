@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
 import { PirateState } from "../features/pirateSlice";
+import CordFormatter from "./cordFormatter";
 
 function CordDisplay() {
     const hist = useSelector((state: PirateState) => state.history);
     return (
-        <div className='cords'>{hist[0]?.x}{hist[0]?.y}</div>
+        <div className='cords'>
+            <CordFormatter x={hist[0]?.x} y={hist[0]?.y} />
+        </div>
     )
 }
 
