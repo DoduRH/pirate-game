@@ -1,6 +1,6 @@
 {
-  "name": "react-pirate-game",
-  "homepage": "https://dodurh.github.io/react-pirate-game/",
+  "name": "pirate-game",
+  "homepage": "https://dodurh.github.io/pirate-game/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
