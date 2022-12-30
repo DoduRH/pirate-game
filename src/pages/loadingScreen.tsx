@@ -5,7 +5,7 @@ import Button from '../components/button';
 
 function LoadingScreen() {
   const dispatch = useDispatch();
-  const [newGridSize, setNewGridSize] = useState<number>(0);
+  const [newGridSize, setNewGridSize] = useState<number>();
 
   function changeGridSize() {
     if (newGridSize != undefined && newGridSize > 0) {
