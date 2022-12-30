@@ -54,7 +54,19 @@ body {
 
 .button {
   font-size: 2em;
-  margin-top: 2vh;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: 5px solid white;
+}
+
+.lowerContainer {
+  display: flex;
+  position: absolute;
+  bottom: 1em;
+  width: 45%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 input {
@@ -78,15 +90,11 @@ svg.labelSvg {
   height: 100%;
 }
 
-.helper {
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-}
-
 .helper p {
   font-size: x-large;
   color: white;
   font-weight: bold;
   cursor: context-menu;
+  margin: 0;
+  margin-left: 1em;
 }
