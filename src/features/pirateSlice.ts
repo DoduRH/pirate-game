@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { act } from '@testing-library/react';
+import { WritableDraft } from 'immer/dist/internal';
 import SquareState from '../interfaces/squareState';
 
 export interface xyPos {
@@ -25,6 +25,18 @@ const initialState: PirateState = {
   history: [],
 };
 
+function setRecent(state: WritableDraft<PirateState>, pos: xyPos) {
+  state.history = [pos, ...state.history];
+  for (let x = 0; x < state.grid.length; x++) {
+    for (let y = 0; y < state.grid[x].length; y++) {
+      if (state.grid[x][y] == SquareState.Recent) {
+        state.grid[x][y] = SquareState.Used;
+      }
+    }
+  }
+  state.grid[pos.x][pos.y] = SquareState.Recent;
+}
+
 export const pirateSlice = createSlice({
   name: 'counter',
   initialState,
@@ -38,19 +50,19 @@ export const pirateSlice = createSlice({
       state.history = [];
     },
     setRecentSquare: (state, action: PayloadAction<SetSquareInterface>) => {
-      state.history = [action.payload, ...state.history];
-      for (let x = 0; x < state.grid.length; x++) {
-        for (let y = 0; y < state.grid[x].length; y++) {
-          if (state.grid[x][y] == SquareState.Recent) {
-            state.grid[x][y] = SquareState.Used;
-          }
-        }
+      setRecent(state, action.payload);
+    },
+    toggleSquare: (state, action: PayloadAction<xyPos>) => {
+      console.log("Toggle")
+      if (state.grid[action.payload.x][action.payload.y] === SquareState.Empty) {
+        setRecent(state, action.payload);
+      } else {
+        state.grid[action.payload.x][action.payload.y] = SquareState.Empty;
       }
-      state.grid[action.payload.x][action.payload.y] = SquareState.Recent;
     }
   },
 });
 
-export const { setGridSize, setRecentSquare } = pirateSlice.actions;
+export const { setGridSize, setRecentSquare, toggleSquare } = pirateSlice.actions;
 
 export default pirateSlice.reducer;
