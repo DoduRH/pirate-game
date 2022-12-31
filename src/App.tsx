@@ -11,6 +11,9 @@ function App() {
     {
       gridSize === -1 ? <LoadingScreen /> : <MainGame />
     }
+    <a href='https://www.github.com/DoduRH/pirate-game'>
+      <img src='/pirate-game/github-mark-white.svg' className='repoLink' alt='Github repository link'></img>
+    </a>
   </>
   );
 }

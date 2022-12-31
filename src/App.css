@@ -133,3 +133,16 @@ svg.labelSvg {
   font-variant-numeric: tabular-nums;
   font-variant-caps: titling-caps;
 }
+
+.repoLink {
+  position: absolute;
+  right: 1em;
+  height: 4em;
+  bottom: 1em;
+  opacity: 1;
+  transition: opacity .1s ease-out;
+}
+
+.repoLink:hover {
+  opacity: .3;
+}
