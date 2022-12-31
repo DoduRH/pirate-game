@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pirate-game/static/css/main.00c96fcf.css",
-    "main.js": "/pirate-game/static/js/main.d5251475.js",
+    "main.css": "/pirate-game/static/css/main.e6ce4861.css",
+    "main.js": "/pirate-game/static/js/main.529e494c.js",
     "index.html": "/pirate-game/index.html",
-    "main.00c96fcf.css.map": "/pirate-game/static/css/main.00c96fcf.css.map",
-    "main.d5251475.js.map": "/pirate-game/static/js/main.d5251475.js.map"
+    "main.e6ce4861.css.map": "/pirate-game/static/css/main.e6ce4861.css.map",
+    "main.529e494c.js.map": "/pirate-game/static/js/main.529e494c.js.map"
   },
   "entrypoints": [
-    "static/css/main.00c96fcf.css",
-    "static/js/main.d5251475.js"
+    "static/css/main.e6ce4861.css",
+    "static/js/main.529e494c.js"
   ]
 }
