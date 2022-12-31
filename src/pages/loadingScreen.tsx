@@ -16,12 +16,14 @@ function LoadingScreen() {
   }
 
   return (
-    <>
-      <h1>Enter the grid size</h1>
-      <input type='number' placeholder='Gridsize' onChange={(e) => setNewGridSize(e.target.valueAsNumber)} value={newGridSize || ''} />
-      <br />
-      <Button onClick={changeGridSize} text='Submit' />
-    </>
+    <div className='loadingContainer'>
+      <div className='loadingBox'>
+        <h1>Enter the grid size</h1>
+        <input type='number' placeholder='Gridsize' onChange={(e) => setNewGridSize(e.target.valueAsNumber)} value={newGridSize || ''} />
+        <br />
+        <Button onClick={changeGridSize} text='Submit' className='loadingBtn' />
+      </div>
+    </div>
   )
 }
 

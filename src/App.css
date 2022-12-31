@@ -4,6 +4,32 @@ body {
   overflow-y: hidden;
 }
 
+.loadingContainer {
+  display: flex;
+  height: 90vh;
+}
+
+.loadingBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  padding: 2em;
+  padding-top: 0.5em;
+  border-radius: 1em;
+  background-color: #3b63b4;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+}
+
+.loadingBtn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .gridArea {
   flex: 1;
   margin-top: auto;
@@ -71,10 +97,13 @@ body {
 
 input {
   font-size: large;
+  margin-bottom: 0.5em;
 }
 
 h1 {
   color: white;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
 
 svg.labelSvg {
