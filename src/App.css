@@ -127,3 +127,9 @@ svg.labelSvg {
   margin: 0;
   margin-left: 1em;
 }
+
+.monospace {
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
+  font-variant-caps: titling-caps;
+}
