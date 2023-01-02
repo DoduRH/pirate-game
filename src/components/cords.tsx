@@ -5,7 +5,7 @@ import CordFormatter from "./cordFormatter";
 function CordDisplay() {
     const hist = useSelector((state: PirateState) => state.history);
     return (
-        <div className='cords'>
+        <div className='cords monospace'>
             <CordFormatter x={hist[0]?.x} y={hist[0]?.y} />
         </div>
     )

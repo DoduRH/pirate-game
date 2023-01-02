@@ -13,7 +13,7 @@ function CordFormatter({x, y}: CordFormatterProps) {
 
   const char = String.fromCharCode(x+65);
   return (
-    <span className='monospace'>{char}{(y+1).toString().padStart(length, '0')}</span>
+    <>{char}{(y+1).toString().padStart(length, '0')}</>
   )
 }
 
