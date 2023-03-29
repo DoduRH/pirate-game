@@ -11,9 +11,9 @@ function CordFormatter({x, y}: CordFormatterProps) {
 
   const length: number = Math.floor(Math.log10(gridSize))+1;
 
-  const char = String.fromCharCode(x+65);
+  const char = String.fromCharCode(y+65);
   return (
-    <>{char}{(y+1).toString().padStart(length, '0')}</>
+    <>{char}{(x+1).toString().padStart(length, '0')}</>
   )
 }
 
