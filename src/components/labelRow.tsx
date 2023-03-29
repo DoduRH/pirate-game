@@ -9,7 +9,7 @@ function LabelRow({ gridSize }: labelRowProps) {
         <LabelSquare text='' gridSize={gridSize} key={-1} />
         {
             Array.from({ length: gridSize }).map(function (e, i) {
-                return <LabelSquare text={(i+1).toString()} gridSize={gridSize} key={i} />
+                return <LabelSquare text={String.fromCharCode(i+65)} gridSize={gridSize} key={i} />
             })
         }
     </div>

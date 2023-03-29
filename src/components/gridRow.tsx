@@ -8,7 +8,7 @@ interface gridProps {
 
 function GridRow({ gridSize, rowNum }: gridProps) {
     return (<div className="gridRow">
-        <LabelSquare text={String.fromCharCode(rowNum+65)} gridSize={gridSize} key={-1} />
+        <LabelSquare text={(rowNum+1).toString()} gridSize={gridSize} key={-1} />
         {
             Array.from({ length: gridSize }).map(function (e, i) {
                 return <GridSquare x={i} y={rowNum} gridSize={gridSize} key={i} />
